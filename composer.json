@@ -1,0 +1,21 @@
+{
+  "name": "profesorperry/seo",
+  "description": "Analyzes and repairs SEO for given website",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "profesorperry",
+      "email": "jaksza725@gmail.com"
+    }
+  ],
+  "autoload": {
+    "Seo\\": "src/"
+  },
+  "require": {
+    "php": ">=8.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.5"
+  }
+}

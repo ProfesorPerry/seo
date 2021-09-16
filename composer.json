@@ -10,7 +10,14 @@
     }
   ],
   "autoload": {
-    "Seo\\": "src/"
+    "psr-4": {
+      "Seo\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Test\\": "test/"
+    }
   },
   "require": {
     "php": ">=8.0"

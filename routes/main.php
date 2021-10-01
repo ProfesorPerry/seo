@@ -3,5 +3,8 @@
 use Seo\Mvc\Controller\IndexController;
 
 return [
-    '/' => [IndexController::class, 'index'],
+    'GET /' => [IndexController::class, 'index'],
+    'GET /action' => function () {
+        echo 'Hello world!';
+    }
 ];

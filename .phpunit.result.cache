@@ -1,0 +1,1 @@
+{"version":1,"defects":{"Warning":6,"Test\\Core\\RouterTest::it_creates_callable_action_in_routes_array":4,"Test\\Core\\RouterTest::it_works_with_empty_array_as_constructor_parameter":3},"times":{"Warning":0.023,"Test\\Core\\RouterTest::it_creates_callable_action_in_routes_array":0.019,"Test\\Core\\RouterTest::it_works_with_empty_array_as_constructor_parameter":0.002}}

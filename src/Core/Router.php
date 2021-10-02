@@ -9,12 +9,11 @@ class Router
 
     /**
      * Init routes with given config.
-     * @param array $config
+     * @param array $routes
      */
-    public function __construct(array $config)
+    public function __construct(array $routes)
     {
-        $routesPath = $config['routes']['path'];
-        $this->routes = require $routesPath;
+        $this->routes = $routes;
     }
 
     /**

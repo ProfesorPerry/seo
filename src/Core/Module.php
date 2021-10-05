@@ -27,9 +27,9 @@ class Module
     public function run()
     {
         $request = Request::createFromGlobals();
-        $routes = $this->router->getRoutes();
+        $paths = $this->router->getRoutes();
 
-        foreach ($routes as $path => $callable) {
+        foreach ($paths as $path => $callable) {
             $routeMatched = $request->getPathInfo() === $path;
 
             if ($routeMatched) {
@@ -51,15 +51,15 @@ class Module
         }
 
         if (is_array($callable)) {
-            if (!class_exists($callable['controller'])) {
-                throw new Exception("Class '{$callable['controller']}' not found.");
+            if (!class_exists($callable[0])) {
+                throw new Exception("Class '$callable[0]' not found.");
             }
 
-            if (!method_exists($callable['controller'], $callable['action'])) {
-                throw new Exception("Method '{$callable['action']}' not found in class '{$callable['controller']}'.");
+            if (!method_exists($callable[0], $callable[1])) {
+                throw new Exception("Method '$callable[1]' not found in class '$callable[0]'.");
             }
 
-            call_user_func([$callable['controller'], $callable['action']]);
+            call_user_func([new $callable[0], $callable[1]]);
         }
     }
 }

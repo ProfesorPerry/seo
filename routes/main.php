@@ -1,10 +1,9 @@
 <?php
 
-use Seo\Mvc\Controller\IndexController;
+/** @var Router $router */
 
-return [
-    'GET /' => [IndexController::class, 'index'],
-    'GET /action' => function () {
-        echo 'Hello world!';
-    }
-];
+use Seo\Core\Router;
+
+$router->get('/', function () {
+    echo 'Welcome to SEO module.';
+});

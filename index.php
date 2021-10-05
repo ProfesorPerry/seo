@@ -5,15 +5,9 @@ use Seo\Core\Router;
 
 require __DIR__ . '/vendor/autoload.php';
 
-$router = new Router([
-    'routes' => [
-        'path' => __DIR__ . '/routes/main.php',
-    ],
-]);
+$router = new Router();
 
-$router->get('/test', function () {
-    echo 'Hello from test!';
-});
+require __DIR__ . '/routes/main.php';
 
-$seoModule = new Module($router);
-$seoModule->run();
+$module = new Module($router);
+$module->run();

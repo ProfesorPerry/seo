@@ -1,8 +1,3 @@
-# TODO
-
-1. Module.php - method run( )
-   1. Default 'page' and 'action' variables should be extracted from config.
-
 # Using routes
 
 As module user you can register your own routes.

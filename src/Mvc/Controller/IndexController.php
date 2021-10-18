@@ -2,10 +2,12 @@
 
 namespace Seo\Mvc\Controller;
 
-class IndexController
+use Seo\Core\View;
+
+class IndexController extends AbstractController
 {
     public function index()
     {
-        echo 'Hello world!';
+        return new View('dashboard.php');
     }
 }

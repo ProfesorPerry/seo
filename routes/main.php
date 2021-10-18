@@ -4,6 +4,4 @@
 
 use Seo\Core\Router;
 
-$router->get('/', function () {
-    echo 'Welcome to SEO module.';
-});
+$router->get('/', [\Seo\Mvc\Controller\IndexController::class, 'index']);

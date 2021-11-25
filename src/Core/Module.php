@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Seo\Core;
 
@@ -7,11 +8,12 @@ use Symfony\Component\HttpFoundation\Request;
 
 class Module
 {
-    /** @var Router $router */
+    /**
+     * @var Router $router
+     */
     private Router $router;
 
     /**
-     * Init SEO module.
      * @param Router $router
      */
     public function __construct(Router $router)
@@ -20,11 +22,9 @@ class Module
     }
 
     /**
-     * Run SEO module.
-     *
      * @throws Exception
      */
-    public function run()
+    public function run(): bool
     {
         $request = Request::createFromGlobals();
         $paths = $this->router->getRoutes();
@@ -36,11 +36,11 @@ class Module
                 $this->callAction($callable);
             }
         }
+
+        return true;
     }
 
     /**
-     * Call action in the controller.
-     *
      * @param array|callable $callable
      * @throws Exception
      */

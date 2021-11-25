@@ -1,15 +1,16 @@
 <?php
+declare(strict_types=1);
 
 namespace Seo\Core;
 
 class Router
 {
-    /** @var array $routes */
+    /**
+     * @var array
+     */
     private array $routes = [];
 
     /**
-     * Create GET method route.
-     *
      * @param string $path
      * @param callable|array $action
      */
@@ -25,8 +26,6 @@ class Router
     }
 
     /**
-     * Create POST route.
-     *
      * @param string $path
      * @param callable|array $action
      */
@@ -42,9 +41,7 @@ class Router
     }
 
     /**
-     * Get all defined routes.
-     *
-     * @return array Defined routes.
+     * @return array
      */
     public function getRoutes(): array
     {
